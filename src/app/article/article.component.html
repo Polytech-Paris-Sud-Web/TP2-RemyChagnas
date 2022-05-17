@@ -1,9 +1,9 @@
 <p>article works!</p>
 
-<div>
+<div [routerLink]="'/articles/'+article.id">
     <h3> {{this.article.title}} </h3>
     <p> {{this.article.content}} </p>
     <p class="red"> Author : {{this.article.author}} </p>
 
-    <button (click)="delete()">Delete</button>
 </div>
+<button (click)="delete()">Delete</button>
