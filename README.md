@@ -2,8 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
-Tom Mansion
-Sophie Nguyen
+# Aide pour le TP
+
+J'ai aidé : Tom Mansion, Léandre Becq
+M'a aidé(e) : Sophie Nguyen, Tom Mansion, Léandre Becq
 
 ## Development server
 
