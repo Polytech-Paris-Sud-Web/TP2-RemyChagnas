@@ -1,0 +1,13 @@
+
+
+<p>articles works!</p>
+
+<div>
+    <div *ngFor="let article of this.articlesBDD">
+        <app-article 
+        (deletedArticle)="deleteBDD($event)"
+        [article]="article"
+        [routerLink]="'/articles/'+article.id">
+        </app-article>
+    </div>
+</div>
