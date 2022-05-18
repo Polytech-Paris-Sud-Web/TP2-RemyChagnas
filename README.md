@@ -13,7 +13,7 @@ M'a aidé(e) : Sophie Nguyen, Tom Mansion, Léandre Becq
 
 ## Installation
 
-1. ```npm install``
+1. ```npm install```
 
 ## Lancement BDD
 
