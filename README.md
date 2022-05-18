@@ -21,4 +21,4 @@ M'a aidé(e) : Sophie Nguyen, Tom Mansion, Léandre Becq
 
 ## Lancement APP
 
-1. ```ng serve```
+3. ```ng serve```
