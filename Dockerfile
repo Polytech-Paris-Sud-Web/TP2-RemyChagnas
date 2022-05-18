@@ -6,7 +6,5 @@ RUN npm install -g http-server
 RUN npm install -g json-server
 RUN npm run build --prod
 
-EXPOSE 8080
-CMD [ "json-server", "--watch", "src/app/db.json", "&" ]
-CMD [ "http-server", "dist/simple-app" ]
-
+EXPOSE 3000 8080
+CMD [ "json-server", "--watch", "src/app/db.json", "&", "http-server", "dist/simple-app" ]

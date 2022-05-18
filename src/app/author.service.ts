@@ -12,6 +12,6 @@ export class AuthorService {
   }
 
   public getAuthor(author: string): Observable<Author[]> {
-    return this.http.get<Author[]>(`http://localhost:3000/authors?author=${author}`);
+    return this.http.get<Author[]>(`http://54.36.182.43:25413/authors?author=${author}`);
   }
 }
