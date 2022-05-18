@@ -2,13 +2,11 @@ FROM node:latest as node
 WORKDIR /TP2-RemyChagnas
 COPY . .
 RUN npm install
+RUN npm install -g http-server
+RUN npm install -g json-server
 RUN npm run build --prod
 
-FROM nginx:alpine
-COPY --from=node /TP2-RemyChagnas/dist/simple-app /usr/share/nginx/html
-RUN ls
-RUN pwd
-COPY --from=node /TP2-RemyChagnas/src/app/db.json .
-RUN ls
-RUN pwd
-RUN json-server --watch ./db.json &
+EXPOSE 8080
+CMD [ "json-server", "--watch", "src/app/db.json", "&" ]
+CMD [ "http-server", "dist" ]
+

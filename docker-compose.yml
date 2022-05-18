@@ -3,4 +3,4 @@ services:
   web:
     build: .
     ports:
-      - "25412:80"
+      - "25412:8080"
