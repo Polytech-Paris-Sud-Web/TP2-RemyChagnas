@@ -4,6 +4,7 @@ services:
     build: .
     ports:
       - "25412:8080"
+      - "25411:443"
   bdd:
     build: 
       dockerfile: DockerfileJson
