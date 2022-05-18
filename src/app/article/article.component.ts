@@ -23,13 +23,15 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       if(params['id'] != undefined) {
-        this.articleService.getArticleBDD(params['id']).subscribe({next: (data) => this.article = data});
+        this.articleService.getArticle(params['id']).subscribe({next: (data) => this.article = data});
       }
     });
   }
 
-  delete() {
+  /**
+   * Say that delete button was pressed
+   */
+  public delete() {
     this.deletedArticle.emit(this.article);
   }
-
 }

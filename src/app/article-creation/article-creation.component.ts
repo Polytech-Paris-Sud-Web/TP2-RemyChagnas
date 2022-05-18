@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ArticleService } from '../article.service';
-import Article from '../article/article';
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-article-creation',
@@ -11,8 +11,9 @@ import Article from '../article/article';
 export class ArticleCreationComponent implements OnInit {
 
   articleForm : FormGroup;
+  message: String = '';
 
-  constructor(private fb: FormBuilder, private articleService: ArticleService) {
+  constructor(private fb: FormBuilder, private articleService: ArticleService, private authorService: AuthorService) {
     this.articleForm = this.fb.group({
       title: ['Fake Title', Validators.required ],
       content : ['', Validators.required ],
@@ -23,14 +24,23 @@ export class ArticleCreationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createArticle() {
+  /**
+   * Create new article
+   */
+  public createArticle() {
 
     const { title, content, authors } = this.articleForm.value;
+    const response = this.authorService.getAuthor(authors).subscribe((data) => {
 
-    this.articleService.createBDD(
-      title,
-      content,
-      authors
-    ).subscribe();
+      if(data[0] !== undefined) {
+        this.articleService.create(
+          title,
+          content,
+          authors
+        ).subscribe(() => this.message = 'Article created !');
+      } else {
+        this.message = 'This author does not exist !'
+      }
+    });
   }
 }

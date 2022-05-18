@@ -1,11 +1,12 @@
-
-
-<p>articles works!</p>
+<h1>Articles</h1>
 
 <div>
-    <div *ngFor="let article of this.articlesBDD">
+
+    <p>Search in title and content : </p><input type="search" (keyup)="searchArticles($event)">
+
+    <div *ngFor="let article of this.getArticles()">
         <app-article 
-        (deletedArticle)="deleteBDD($event)"
+        (deletedArticle)="deleteArticle($event)"
         [article]="article">
         </app-article>
     </div>

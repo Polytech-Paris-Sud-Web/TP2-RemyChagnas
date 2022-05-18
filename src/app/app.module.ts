@@ -9,7 +9,10 @@ import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleService } from './article.service';
+import { AuthorService } from './author.service';
 import { ArticleCreationComponent } from './article-creation/article-creation.component';
+import { ArticlesHomeComponent } from './articles-home/articles-home.component';
+import { AuthorsComponent } from './authors/authors.component';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -18,7 +21,11 @@ const appRoutes: Routes = [
     path: "articles/:id",
     component: ArticleComponent
   },
-  { path: '', component: ArticlesComponent },
+  {
+    path: "authors/:author",
+    component: AuthorsComponent
+  },
+  { path: '', component: ArticlesHomeComponent },
 ]
 
 @NgModule({
@@ -26,7 +33,9 @@ const appRoutes: Routes = [
     AppComponent,
     ArticleComponent,
     ArticlesComponent,
-    ArticleCreationComponent
+    ArticleCreationComponent,
+    ArticlesHomeComponent,
+    AuthorsComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -36,7 +45,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule 
   ],
-  providers: [ArticleService],
+  providers: [ArticleService, AuthorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,14 @@
+/**
+ * Describe article object
+ */
 class Article {
 
-    id: Number;
-    title: String;
-    content: String;
-    author: String;
+    id: number;
+    title: string;
+    content: string;
+    author: string;
 
-    constructor(title: String, content: String, author: String) {
+    constructor(title: string, content: string, author: string) {
         this.id = 0;
         this.title = title;
         this.content = content;

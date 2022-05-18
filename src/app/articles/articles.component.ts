@@ -12,18 +12,48 @@ import { Router } from '@angular/router';
 export class ArticlesComponent implements OnInit {
 
   articlesBDD: Article[] | undefined;
+  articles: Article[] | undefined;
 
   constructor(private articleService: ArticleService, ) {
   }
 
   ngOnInit() {
-    this.articleService.getArticlesBDD().subscribe({next: (data) => this.articlesBDD = data});
+    this.articleService.getArticles().subscribe({next: (data) => {
+      this.articlesBDD = data;
+      this.articles = data;
+    }});
   }
 
-  deleteBDD(article : Article) {
+  deleteArticle(article : Article) {
 
     const id = article.id;
 
-    this.articleService.deleteBDD(id).subscribe({next: () => this.articleService.getArticlesBDD().subscribe({next: (data) => this.articlesBDD = data})});
+    this.articleService.delete(id).subscribe({next: () => this.articleService.getArticles().subscribe({next: (data) => {
+      this.articlesBDD = data;
+      this.articles = data;
+    }})});
+  }
+
+  /**
+   * 
+   * @returns filtered articles
+   */
+  getArticles(): Article[] | undefined {
+    return this.articles;
+  }
+
+  /**
+   * Search article from title and content
+   * @param event 
+   */
+  public searchArticles(event: any) {
+
+    const value = event.target.value;
+
+    this.articles = this.articlesBDD;
+
+    this.articles = this.articles?.filter(article => {
+      return article.title.includes(event.target.value) ||  article.content.includes(event.target.value)
+    })
   }
 }

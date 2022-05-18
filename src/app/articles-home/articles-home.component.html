@@ -1,0 +1,13 @@
+<h1>Home</h1>
+
+<div>
+
+    <h2>The last 10 articles</h2>
+
+    <div *ngFor="let article of this.getArticles()">
+        <app-article 
+        (deletedArticle)="deleteBDD($event)"
+        [article]="article">
+        </app-article>
+    </div>
+</div>
