@@ -6,4 +6,4 @@ RUN npm install -g http-server
 RUN npm run build --prod
 
 EXPOSE 8080
-CMD [ "http-server", "dist/simple-app" ]
+CMD http-server dist/simple-app
