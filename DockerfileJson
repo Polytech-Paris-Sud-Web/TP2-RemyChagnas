@@ -1,0 +1,7 @@
+FROM node:latest as node
+WORKDIR /TP2-RemyChagnas
+COPY . .
+RUN npm install -g json-server
+
+EXPOSE 3000
+CMD [ "json-server", "--watch", "src/app/db.json"]
