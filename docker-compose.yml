@@ -2,11 +2,24 @@ version: "3.9"
 services:
   web:
     build: .
-    ports:
-      - "25412:8080"
+    networks:
+      - web
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.front.rule=Host(`front.remychagnas.fr`)"
+        - "traefik.http.routers.front.entrypoints=websecure"
+    restart: always
   bdd:
     build: 
       dockerfile: DockerfileJson
-    ports:
-      - "25413:3000"
-    
+    networks:
+      - web
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.bdd.rule=Host(`bdd.remychagnas.fr`)"
+        - "traefik.http.routers.bdd.entrypoints=websecure"
+    restart: always
+
+networks:
+  web:
+    external: true
