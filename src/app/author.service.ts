@@ -8,10 +8,12 @@ import Author from './author/author';
 })
 export class AuthorService {
 
+  readonly serviceUrl: string = 'http://54.36.182.43:25412/'
+
   constructor(private http : HttpClient) {
   }
 
   public getAuthor(author: string): Observable<Author[]> {
-    return this.http.get<Author[]>(`http://localhost:3000/authors?author=${author}`);
+    return this.http.get<Author[]>(`${this.serviceUrl}authors?author=${author}`);
   }
 }
