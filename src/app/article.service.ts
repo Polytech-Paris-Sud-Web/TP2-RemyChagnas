@@ -9,6 +9,8 @@ import { map } from "rxjs/operators";
 })
 export class ArticleService {
   
+  readonly serviceUrl: string = 'http://54.36.182.43:25413/'
+
   constructor(private http : HttpClient) {
   }
 
@@ -17,7 +19,7 @@ export class ArticleService {
    * @returns all articles from BDD
    */
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles");
+    return this.http.get<Article[]>(`${this.serviceUrl}articles`);
   }
 
   /**
@@ -26,7 +28,7 @@ export class ArticleService {
    * @returns article specified by id
    */
   public getArticle(id: Number): Observable<Article> {
-    return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.get<Article>(`${this.serviceUrl}articles/${id}`);
   }
 
   /**
@@ -35,7 +37,7 @@ export class ArticleService {
    * @returns 
    */
   public delete(id: Number): Observable<Object> {
-    return this.http.delete(`http://localhost:3000/articles/${id}`);
+    return this.http.delete(`${this.serviceUrl}articles/${id}`);
   }
 
   /**
@@ -46,6 +48,6 @@ export class ArticleService {
    * @returns 
    */
   public create(title: string, content: string, author: string): Observable<Object> {
-    return this.http.post('http://localhost:3000/articles', new Article(title, content, author));
+    return this.http.post(`${this.serviceUrl}articles`, new Article(title, content, author));
   }
 }
