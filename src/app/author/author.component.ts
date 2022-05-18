@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AuthorService } from '../author.service';
-import Article from '../article/article';
 import Author from './author';
 
+
 @Component({
-  selector: 'app-authors',
-  templateUrl: './authors.component.html',
-  styleUrls: ['./authors.component.css']
+  selector: 'app-author',
+  templateUrl: './author.component.html',
+  styleUrls: ['./author.component.css']
 })
-export class AuthorsComponent implements OnInit {
+export class AuthorComponent implements OnInit {
 
   @Input()
   author: Author;
@@ -25,4 +25,5 @@ export class AuthorsComponent implements OnInit {
         }});
     });
   }
+
 }

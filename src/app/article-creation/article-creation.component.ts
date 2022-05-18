@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ArticleService } from '../article.service';
 import { AuthorService } from '../author.service';
 
@@ -11,7 +11,7 @@ import { AuthorService } from '../author.service';
 export class ArticleCreationComponent implements OnInit {
 
   articleForm : FormGroup;
-  message: String = '';
+  message: String | undefined;
 
   constructor(private fb: FormBuilder, private articleService: ArticleService, private authorService: AuthorService) {
     this.articleForm = this.fb.group({
@@ -22,6 +22,7 @@ export class ArticleCreationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.message = '';
   }
 
   /**

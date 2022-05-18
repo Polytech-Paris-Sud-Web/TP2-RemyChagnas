@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesComponent } from './articles/articles.component';
@@ -12,7 +11,7 @@ import { ArticleService } from './article.service';
 import { AuthorService } from './author.service';
 import { ArticleCreationComponent } from './article-creation/article-creation.component';
 import { ArticlesHomeComponent } from './articles-home/articles-home.component';
-import { AuthorsComponent } from './authors/authors.component';
+import { AuthorComponent } from './author/author.component';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -23,7 +22,7 @@ const appRoutes: Routes = [
   },
   {
     path: "authors/:author",
-    component: AuthorsComponent
+    component: AuthorComponent
   },
   { path: '', component: ArticlesHomeComponent },
 ]
@@ -35,7 +34,7 @@ const appRoutes: Routes = [
     ArticlesComponent,
     ArticleCreationComponent,
     ArticlesHomeComponent,
-    AuthorsComponent
+    AuthorComponent
   ],
   imports: [
     RouterModule.forRoot(

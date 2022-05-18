@@ -3,9 +3,6 @@ import Article from './article/article';
 import {HttpClient} from "@angular/common/http";
 import {Observable, lastValueFrom } from "rxjs";
 import { map } from "rxjs/operators"; 
-import { Content } from '@angular/compiler/src/render3/r3_ast';
-import { AuthorService } from './author.service';
-import Author from './authors/author';
 
 @Injectable({
   providedIn: 'root'
