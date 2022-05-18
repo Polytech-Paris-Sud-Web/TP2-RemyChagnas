@@ -8,5 +8,5 @@ RUN npm run build --prod
 
 EXPOSE 8080
 CMD [ "json-server", "--watch", "src/app/db.json", "&" ]
-CMD [ "http-server", "dist" ]
+CMD [ "http-server", "dist/simple-app" ]
 
