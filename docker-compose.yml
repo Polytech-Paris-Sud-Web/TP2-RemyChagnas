@@ -9,6 +9,8 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.front.rule=Host(`front.remychagnas.fr`)"
         - "traefik.http.routers.front.entrypoints=websecure"
+        - "traefik.http.middlewares.front.compress=true"
+        - "traefik.http.routers.front.middlewares=front"
     restart: always
   bdd:
     build: 
@@ -24,7 +26,3 @@ services:
 networks:
   web:
     external: true
-
-labels:
-    - "traefik.http.middlewares.front.compress=true"
-    - "traefik.http.routers.front.middlewares=front"
