@@ -29,9 +29,9 @@
   ],
   "dataGroups": [
     {
-      "name": "api",
+      "name": "api-performance",
       "urls": [
-        "/articles"
+        "https://bdd.remychagnas.fr/articles"
       ],
       "cacheConfig": {
         "strategy": "performance",
