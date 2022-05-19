@@ -1,8 +1,8 @@
-import { task, src, dest } from 'gulp';
-import gzip from 'gulp-gzip';
+var gulp = require('gulp');
+var gzip = require('gulp-gzip');
 
-task('compress', function() {
-  return src(['./dist/**/*.*'])
+gulp.task('compress', function() {
+  return gulp.src(['./dist/**/*.*'])
       .pipe(gzip())
-      .pipe(dest('./dist'));
+      .pipe(gulp.dest('./dist'));
 });
