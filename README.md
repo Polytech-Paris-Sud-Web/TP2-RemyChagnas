@@ -2,7 +2,17 @@
 
 Voici mon tp2.
 
-URL web sur OVH : https://front.remychagnas.fr/
+URL web sur un vps OVH : https://front.remychagnas.fr/
+
+Content of deploy.sh :
+
+```
+#!/bin/bash
+cd web/TP2-RemyChagnas/
+git pull
+sudo docker compose down
+sudo docker compose up --build -d
+```
 
 ## Collaboration
 
