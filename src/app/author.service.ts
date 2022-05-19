@@ -8,7 +8,7 @@ import Author from './author/author';
 })
 export class AuthorService {
 
-  readonly serviceUrl: string = 'http://54.36.182.43:25413/'
+  readonly serviceUrl: string = 'https://bdd.remychagnas.fr/'
 
   constructor(private http : HttpClient) {
   }

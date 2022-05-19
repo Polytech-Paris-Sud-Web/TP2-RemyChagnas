@@ -15,7 +15,6 @@ services:
     networks:
       - web
     labels:
-        - "traefik.enable=true"
         - "traefik.http.routers.bdd.rule=Host(`bdd.remychagnas.fr`)"
         - "traefik.http.routers.bdd.entrypoints=websecure"
     restart: always
