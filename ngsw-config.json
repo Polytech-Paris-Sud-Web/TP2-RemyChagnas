@@ -32,7 +32,7 @@
       "name": "api-performance",
       "urls": [
         "https://bdd.remychagnas.fr/articles",
-        "https://bdd.remychagnas.fr/authors/*",
+        "https://bdd.remychagnas.fr/authors?*",
         "https://bdd.remychagnas.fr/articles/*"
       ],
       "cacheConfig": {
