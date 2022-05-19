@@ -12,6 +12,8 @@ import { AuthorService } from './author.service';
 import { ArticleCreationComponent } from './article-creation/article-creation.component';
 import { ArticlesHomeComponent } from './articles-home/articles-home.component';
 import { AuthorComponent } from './author/author.component';
+import { environment } from 'src/environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
   ],
   providers: [ArticleService, AuthorService],
   bootstrap: [AppComponent]
