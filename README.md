@@ -2,7 +2,7 @@
 
 Voici mon tp2.
 
-URL web sur OVH : http://54.36.182.43:25412/
+URL web sur OVH : https://front.remychagnas.fr/
 
 ## Collaboration
 
