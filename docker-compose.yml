@@ -4,6 +4,7 @@ services:
     build: .
     networks:
       - web
+    container_name: front
     labels:
         - "traefik.enable=true"
         - "traefik.http.routers.front.rule=Host(`front.remychagnas.fr`)"
@@ -23,3 +24,7 @@ services:
 networks:
   web:
     external: true
+
+labels:
+    - "traefik.http.middlewares.front.compress=true"
+    - "traefik.http.routers.front.middlewares=front"
