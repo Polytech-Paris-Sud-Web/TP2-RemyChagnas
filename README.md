@@ -4,6 +4,8 @@ Voici mon tp2.
 
 URL web sur un vps OVH : https://front.remychagnas.fr/
 
+/!\ Seules les données consultées sont dans le cache, la bdd n'est pas dans le cache car il y aurait des problèmes dans le cas d'une bdd plus volumineuse.
+
 Content of deploy.sh :
 
 ```
