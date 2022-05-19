@@ -4,6 +4,10 @@ Voici mon tp2.
 
 URL web sur OVH : http://54.36.182.43:25412/
 
+## Collaboration
+
+- On a beaucoup discuté pour la CD avec Tom Mansion
+
 ## Aide pour le TP
 
 - J'ai aidé : Tom Mansion, Léandre Becq
