@@ -22,7 +22,7 @@ sudo docker compose up --build -d
 
 ## Aide pour le TP
 
-- J'ai aidé : Tom Mansion, Nathan Pinault
+- J'ai aidé : Tom Mansion, Nathan Pinault, Tom Ravanel
 - M'a aidé(e) : Tom Mansion
 
 ## Difficultés rencontrées

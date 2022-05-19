@@ -6,6 +6,7 @@ services:
       - web
     labels:
         - "traefik.enable=true"
+        - "traefik.http.middlewares.test-compress.compress=true"
         - "traefik.http.routers.front.rule=Host(`front.remychagnas.fr`)"
         - "traefik.http.routers.front.entrypoints=websecure"
     restart: always
