@@ -27,8 +27,7 @@ sudo docker compose up --build -d
 
 ## Difficultés rencontrées
 
-1. Problème de type entre string et String en typescript
-2. Mise en place du service-worker : problème avec mon serveur à cause du service-worker en localhost
+1. Mise en place du service-worker : problème avec mon serveur à cause du service-worker en localhost
 
 ## Installation
 
