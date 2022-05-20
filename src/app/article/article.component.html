@@ -1,7 +1,9 @@
-<div [routerLink]="'/articles/'+article.id">
-    <h3> {{this.article.title}} </h3>
-    <p> {{this.article.content}} </p>
-    <p class="red"> Author : {{this.article.author}} </p>
+<div *ngIf="this.article !== undefined">
+    <div [routerLink]="'/articles/'+article!.id">
+        <h3> {{this.article!.title}} </h3>
+        <p> {{this.article!.content}} </p>
+        <p class="red"> Author : {{this.article!.author}} </p>
+    </div>
+    <button (click)="delete()">Delete</button>
+    <button [routerLink]="'/authors/'+this.article!.author">See the author's biography</button>
 </div>
-<button (click)="delete()">Delete</button>
-<button [routerLink]="'/authors/'+this.article.author">See the author's biography</button>

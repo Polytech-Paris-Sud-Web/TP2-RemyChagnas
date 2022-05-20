@@ -29,9 +29,11 @@ export class ArticlesHomeComponent implements OnInit {
 
     const id = article.id;
 
-    this.articleService.delete(id).subscribe({next: () => this.articleService.getArticles().subscribe({next: (data) => {
-      this.articlesBDD = data;
-    }})});
+    if(id != undefined) {
+      this.articleService.delete(id!).subscribe({next: () => this.articleService.getArticles().subscribe({next: (data) => {
+        this.articlesBDD = data;
+      }})});
+    }
   }
 
   /**

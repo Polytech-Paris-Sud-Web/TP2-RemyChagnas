@@ -31,8 +31,7 @@ export class ArticleCreationComponent implements OnInit {
   public createArticle() {
 
     const { title, content, authors } = this.articleForm.value;
-    const response = this.authorService.getAuthor(authors).subscribe((data) => {
-
+    this.authorService.getAuthor(authors).subscribe((data) => {
       if(data[0] !== undefined) {
         this.articleService.create(
           title,

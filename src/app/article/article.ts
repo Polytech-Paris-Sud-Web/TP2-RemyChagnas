@@ -3,14 +3,14 @@
  */
 class Article {
 
-    id: number;
+    id: number | undefined;
     title: string;
     content: string;
     author: string;
     creationDate: Date;
 
     constructor(title: string, content: string, author: string) {
-        this.id = 0;
+        this.id = undefined;
         this.title = title;
         this.content = content;
         this.author = author;

@@ -11,13 +11,12 @@ import Article from './article';
 export class ArticleComponent implements OnInit {
     
   @Input()
-  article: Article;
+  article: Article | undefined;
 
   @Output()
   deletedArticle : EventEmitter<Article> = new EventEmitter();
 
   constructor(private articleService: ArticleService, private route: ActivatedRoute){
-    this.article = new Article('','','');
   }
 
   ngOnInit() {

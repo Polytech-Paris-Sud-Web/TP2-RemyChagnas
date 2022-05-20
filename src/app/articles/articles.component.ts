@@ -31,10 +31,12 @@ export class ArticlesComponent implements OnInit {
 
     const id = article.id;
 
-    this.articleService.delete(id).subscribe({next: () => this.articleService.getArticles().subscribe({next: (data) => {
-      this.articlesBDD = data;
-      this.articles = data;
-    }})});
+    if(id != undefined) {
+      this.articleService.delete(id).subscribe({next: () => this.articleService.getArticles().subscribe({next: (data) => {
+        this.articlesBDD = data;
+        this.articles = data;
+      }})});
+    } 
   }
 
   /**
@@ -58,7 +60,7 @@ export class ArticlesComponent implements OnInit {
     this.articles = this.articlesBDD;
 
     this.articles = this.articles?.filter(article => {
-      return article.title.includes(event.target.value) ||  article.content.includes(event.target.value)
+      return article.title.includes(value) ||  article.content.includes(value);
     })
   }
 }
